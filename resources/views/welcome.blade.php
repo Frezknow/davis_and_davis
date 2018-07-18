@@ -29,6 +29,7 @@
                 <div class="links">
                     <a href="{{route('methods')}}">Methods</a>
                     <a href="{{route('contactus')}}">Contact Us</a>
+                    <a href="{{route('articles')}}">Articles</a>
                     <a href="{{route('about')}}">About Us</a>
                   <!--  <a href="{{route('products')}}">Products</a> -->
                 </div>

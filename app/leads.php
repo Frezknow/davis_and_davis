@@ -10,7 +10,7 @@ class leads extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name','email', 'number','business'
+        'id', 'name','email', 'number','business','type'
     ];
 
     /**

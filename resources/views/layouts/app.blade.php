@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Davis & Davis') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
     <script src="{{ asset('js/jquery.js')}}"></script>
     <style>
     html,body{
@@ -35,6 +35,7 @@
 
                 <a class="navbar-brand" href="{{route('methods')}}">Methods</a>
                 <a class="navbar-brand" href="{{route('contactus')}}">Contact Us</a>
+                <a class="navbar-brand" href="{{route('articles')}}">Articles</a>
                 <a class="navbar-brand" href="{{route('about')}}">About Us</a>
                 @if(auth()->user()!=null)
                 <a class="navbar-brand" href="{{route('logout')}}">Logout</a>

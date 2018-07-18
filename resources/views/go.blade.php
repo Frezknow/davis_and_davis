@@ -36,7 +36,7 @@
   $.ajax({
     url:"lead",
     type:"POST",
-    data:{_token:token,email:email,name:name,number:number,business:business},
+    data:{_token:token,email:email,name:name,number:number,business:business,type:""},
     success:function(){
       window.location.replace(product);
     },

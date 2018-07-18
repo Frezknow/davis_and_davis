@@ -5,6 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\ads;
 use App\leads;
+use App\messages;
+use App\User;
+use App\articles;
 class HomeController extends Controller
 {
     /**
@@ -24,14 +27,18 @@ class HomeController extends Controller
         if(auth()->user()->type=="admin"){
           $leads = leads::all();
           $ads = ads::all();
+          $messages = messages::all();
+          $articles = articles::all();
+          $bizs = User::where('type','business')->get();
+
         }
         if(auth()->user()->type=="business"){
-          $leads = leads::where('business',$email)->get();
+          $leads = leads::where('business','LIKE',"%".$email."%")->get();
           $ads = null;
         }
         echo auth()->user()->tyoe;
 
-        if(auth()->user()->type=="admin")return view('home',array('ads'=>$ads,'leads'=>$leads));
+        if(auth()->user()->type=="admin")return view('home',array('bizs'=>$bizs,'ads'=>$ads,'leads'=>$leads,'messages'=>$messages,'articles'=>$articles));
         else return view('home',array('ads'=>$ads,'leads'=>$leads));
     }
 }

@@ -27,9 +27,29 @@ Route::get('/products', [
     'uses' => 'views@products',
     'as' => 'products',
 ]);
+Route::get('/article', [
+    'uses' => 'views@article',
+    'as' => 'article',
+]);
+Route::get('/articles', [
+    'uses' => 'views@articles',
+    'as' => 'articles',
+]);
 Route::get('/go', [
     'uses' => 'views@go',
     'as' => 'go',
+]);
+Route::post('/createArticle', [
+    'uses' => 'functions@createArticle',
+    'as' => 'createArticle',
+]);
+Route::post('/contact', [
+    'uses' => 'functions@contact',
+    'as' => 'contact',
+]);
+Route::post('/createBusiness', [
+    'uses' => 'functions@createBusiness',
+    'as' => 'createBusiness',
 ]);
 Route::get('/contactus', [
     'uses' => 'views@contactus',
@@ -38,6 +58,10 @@ Route::get('/contactus', [
 Route::get('/lg', [
     'uses' => 'views@lg',
     'as' => 'lg',
+]);
+Route::post('/updateLeads',[
+  'uses'=>'functions@updateLeads',
+  'as'=>'updateLeads'
 ]);
 Route::post('/DeleteProduct',[
   'uses'=>'functions@DeleteProduct',
@@ -52,7 +76,9 @@ Route::post('/lead', [
     'uses' => 'functions@lead',
     'as' => 'lead',
 ]);
+/** All Deleting routes below **/
 
+/** End of Route deleting **/
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

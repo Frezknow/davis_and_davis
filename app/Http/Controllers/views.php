@@ -6,6 +6,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\ads;
+use App\articles;
 use Illuminate\Support\Facades\DB;
 class views extends Controller
 {
@@ -36,7 +37,15 @@ class views extends Controller
 
     return view('go',array('ad'=>$ad));
   }
-
+  public function article(Request $request){
+    $id = $request->id;
+    $article= articles::where('id',$id)->first();
+    return view('article',array('article'=>$article));
+  }
+  public function articles(){
+    $articles= articles::all();
+    return view('articles',array('articles'=>$articles));
+  }
 
 
 }
